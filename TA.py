@@ -1,6 +1,7 @@
 #Import modul
 import tkinter as tk
 import datetime
+from tkinter import messagebox
 
 # class countdown
 class Countdown(tk.Frame):
@@ -10,7 +11,6 @@ class Countdown(tk.Frame):
         self.memunculkan_widgets()
         self.waktu_tersisa=0
         self._waktu_menyala=False
-       
     
     def memunculkan_widgets(self):
         self.label.pack()
@@ -18,7 +18,6 @@ class Countdown(tk.Frame):
         self.start.pack()
         self.stop.pack()
         self.reset.pack()
-     
 
     def membuat_widgets(self):
         self.label=tk.Label(self, text="Masukkan waktu dalam detik")
@@ -32,8 +31,8 @@ class Countdown(tk.Frame):
 
     def countdown(self):
         self.label["text"]=self.convert_waktu_tersisa()
-        while True:
-            if self.waktu_tersisa:
+
+        if self.waktu_tersisa:
             self.waktu_tersisa-=1
             self._waktu_menyala=self.after(1000, self.countdown)
      
@@ -63,7 +62,8 @@ class Countdown(tk.Frame):
         self.start.pack()
         self.stop.pack()
         self.reset.pack()
-       
+
+   
     def stop_timer(self):
         if self._waktu_menyala:
             self.after_cancel(self._waktu_menyala)
@@ -78,6 +78,7 @@ if __name__=="__main__":
     root.geometry("400x180")
     root.title("Timer App")
     root.iconbitmap('E:\TAAA\Radiation.ico')
+    root.resizable(False,False)
     countdown=Countdown(root)
     countdown.pack()
 
