@@ -1,7 +1,6 @@
 #Import modul
 import tkinter as tk
 import datetime
-from tkinter import messagebox
 
 # class countdown
 class Countdown(tk.Frame):
