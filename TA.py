@@ -1,6 +1,9 @@
+
 #Import modul
 import tkinter as tk
 import datetime
+from tkinter import ttk
+
 
 # class countdown
 class Countdown(tk.Frame):
@@ -69,16 +72,19 @@ class Countdown(tk.Frame):
             self._waktu_menyala=False
 
     def convert_waktu_tersisa(self):
-        return datetime.timedelta(seconds=self.waktu_tersisa)
+        while True:
+            return datetime.timedelta(seconds=self.waktu_tersisa)
 
 # main loop
 if __name__=="__main__":
-    root=tk.Tk()
-    root.geometry("400x180")
-    root.title("Timer App")
-    root.iconbitmap('E:\TAAA\Radiation.ico')
-    root.resizable(False,False)
-    countdown=Countdown(root)
-    countdown.pack()
+        root=tk.Tk()
+        root.geometry("400x180")
+        root.title("Timer App")
+  
+        root.iconbitmap('E:\TAAA\Radiation.ico')
+        root.resizable(False,False)
+        countdown=Countdown(root)
+        countdown.pack()
 
-    root.mainloop()
+        root.mainloop()
+       
