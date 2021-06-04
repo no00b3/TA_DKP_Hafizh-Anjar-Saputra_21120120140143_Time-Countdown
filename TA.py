@@ -2,7 +2,6 @@
 #Import modul
 import tkinter as tk
 import datetime
-from tkinter import ttk
 
 
 # class countdown
